@@ -632,6 +632,93 @@
 
 
     .floating-chip { display: none !important; }
+
+    /* Mobile publishing fix */
+    .sticky-mobile-cta {
+      display: none !important;
+    }
+
+    @media (max-width: 760px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      .nav-inner {
+        padding: 10px 14px;
+        gap: 10px;
+      }
+
+      .nav-links {
+        gap: 0;
+      }
+
+      .nav-links a:not(.nav-cta) {
+        display: none !important;
+      }
+
+      .nav-cta {
+        min-height: 38px;
+        padding: 9px 14px;
+        font-size: 13px;
+        white-space: nowrap;
+      }
+
+      .brand strong {
+        font-size: 22px;
+      }
+
+      .brand span {
+        font-size: 8px;
+        letter-spacing: .28em;
+      }
+
+      .section {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .model-highlight {
+        padding: 22px;
+        border-radius: 24px;
+      }
+
+      .model-highlight-copy h3 {
+        font-size: 28px;
+        line-height: 1.12;
+        letter-spacing: -.035em;
+      }
+
+      .model-highlight-copy p {
+        font-size: 16px;
+        line-height: 1.65;
+      }
+
+      .model-points {
+        grid-template-columns: 1fr !important;
+        gap: 14px;
+      }
+
+      .model-point {
+        padding: 18px;
+        border-radius: 20px;
+      }
+
+      .model-point strong {
+        font-size: 16px;
+      }
+
+      .model-point span {
+        font-size: 14px;
+        line-height: 1.58;
+        word-break: normal;
+        overflow-wrap: normal;
+      }
+
+      footer {
+        padding-bottom: 54px !important;
+      }
+    }
+
 </style>
 </head>
 <body>
@@ -846,29 +933,6 @@
 <div class="footer-legal-note">Effective date: 30 March 2026. Pulse by ZennPH is operated by ZennPH LTD.</div>
 </div>
 </footer>
-<div aria-label="Mobile trial request" class="sticky-mobile-cta">
-<a class="btn btn-primary" href="mailto:office@zennph.com?subject=Pulse%20Free%20Trial%20Request">Request Pulse Trial</a>
-</div>
-<div aria-hidden="true" aria-labelledby="privacy-modal-title" class="legal-modal" id="privacy-modal" role="dialog">
-<div class="legal-modal-panel">
-<div class="legal-modal-head">
-<div>
-<h2 class="legal-modal-title" id="privacy-modal-title">Privacy Policy</h2>
-<p class="legal-modal-sub">Effective date: 30 March 2026.</p>
-</div>
-<button aria-label="Close privacy policy" class="legal-close" type="button">×</button>
-</div>
-<div class="legal-text">
-<p><strong>Pulse by ZennPH is operated by ZennPH LTD.</strong></p>
-<p>Inspection records are primarily stored on the user’s device where the Pulse app is used. Users are responsible for protecting their device, controlling access to saved files, managing backups, and ensuring that any exported files are stored and shared appropriately.</p>
-<p>Certain inspection content entered into Pulse, including typed observations or spoken observations converted into text, may be transmitted to third party AI services, including OpenAI, for analysis and response generation so Pulse can structure findings, recommendations, corrective actions, and reports.</p>
-<p>Photos and attachments added by the user may be stored locally and included in exported reports. Based on the current intended use of Pulse, photos are not intended to be sent for AI analysis unless a specific feature requires that processing.</p>
-<p>The Pulse website may allow users to request a free trial by email. Any information sent by email is handled through the user’s own email provider and received by ZennPH LTD for the purpose of responding to inquiries, arranging trial access, and discussing Pulse.</p>
-<p>ZennPH LTD does not guarantee uninterrupted service, absolute confidentiality, or error free outputs. Users must not enter highly sensitive personal, medical, passport, financial, or other confidential information unless they have independently determined that such use is lawful and appropriate.</p>
-<p>Pulse is a support tool only. It does not replace professional judgment, internal review, legal review, regulatory compliance verification, or company approval processes. Users are solely responsible for reviewing all outputs before relying on or sharing them.</p>
-<p>For privacy related questions, contact <a href="mailto:office@zennph.com">office@zennph.com</a>.</p>
-</div>
-</div>
 </div>
 <div aria-hidden="true" aria-labelledby="terms-modal-title" class="legal-modal" id="terms-modal" role="dialog">
 <div class="legal-modal-panel">
