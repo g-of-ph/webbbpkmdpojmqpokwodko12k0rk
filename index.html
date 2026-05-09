@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Pulse by ZennPH is an AI powered inspection reporting app for cruise ship public health teams. Capture observations by voice or text, attach photos, structure findings, suggest corrective actions, and export inspection reports." name="description"/>
+<meta content="Pulse by ZennPH is an AI powered inspection reporting app for cruise ship public health teams, built around a specialized AI engine for inspection language, observations, photos, corrective actions, and structured reports." name="description"/>
 <meta content="Pulse by ZennPH, cruise public health inspection app, AI inspection reporting, cruise compliance software, PHO inspection reporting, EHO inspection reporting, sanitation inspection app, vessel sanitation inspection, public health reporting" name="keywords"/>
 <meta content="index, follow" name="robots"/>
 <meta content="Pulse by ZennPH | AI Inspection Reporting" property="og:title"/>
@@ -719,8 +719,467 @@
       }
     }
 
+
+
+/* Pulse premium mobile refresh, darker, cleaner, more alive */
+:root {
+  --bg: #01040c;
+  --bg-deep: #000208;
+  --panel: rgba(5, 14, 31, 0.78);
+  --panel-strong: rgba(7, 18, 38, 0.96);
+  --glass: rgba(7, 17, 36, 0.68);
+  --line: rgba(99, 169, 255, 0.20);
+  --line-strong: rgba(98, 222, 255, 0.42);
+  --text: #f7fbff;
+  --muted: #b3c2dc;
+  --quiet: #8294b2;
+  --blue: #2379ff;
+  --cyan: #25e9ff;
+  --purple: #8c56ff;
+  --magenta: #e641ff;
+  --green: #16f19a;
+  --shadow: 0 34px 110px rgba(0, 0, 0, 0.66);
+  --radius: 30px;
+}
+
+html { background: #01040c; }
+body {
+  background:
+    radial-gradient(circle at 16% 6%, rgba(35, 121, 255, 0.18), transparent 32%),
+    radial-gradient(circle at 92% 12%, rgba(140, 86, 255, 0.16), transparent 34%),
+    radial-gradient(circle at 50% 78%, rgba(22, 241, 154, 0.07), transparent 38%),
+    linear-gradient(180deg, #01040c 0%, #030713 46%, #000208 100%) !important;
+}
+
+body::before {
+  opacity: .54;
+  background:
+    linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.014) 1px, transparent 1px),
+    radial-gradient(circle at 50% 0%, rgba(37,233,255,.08), transparent 52%);
+  background-size: 46px 46px, 46px 46px, 100% 100%;
+  animation: gridDrift 18s linear infinite;
+}
+
+@keyframes gridDrift {
+  0% { background-position: 0 0, 0 0, 0 0; }
+  100% { background-position: 46px 46px, 46px 46px, 0 0; }
+}
+
+.page, .section, footer, .steps { position: relative; z-index: 2; }
+.section { padding-top: 84px; padding-bottom: 84px; }
+.glass {
+  background: linear-gradient(180deg, rgba(9, 22, 46, 0.74), rgba(2, 8, 20, 0.90)) !important;
+  border-color: rgba(115, 196, 255, 0.18) !important;
+  box-shadow: 0 24px 82px rgba(0,0,0,.46), inset 0 1px 0 rgba(255,255,255,.045) !important;
+}
+
+.nav {
+  background: rgba(1, 4, 12, 0.72) !important;
+  box-shadow: 0 10px 40px rgba(0,0,0,.24);
+}
+
+.hero {
+  min-height: auto;
+  padding-top: 82px;
+  padding-bottom: 68px;
+}
+
+.eyebrow {
+  background: rgba(7, 20, 43, 0.72) !important;
+  border-color: rgba(98, 222, 255, 0.26) !important;
+  box-shadow: inset 0 0 24px rgba(37,233,255,.06), 0 0 34px rgba(35,121,255,.08) !important;
+}
+
+.gradient-text {
+  background: linear-gradient(92deg, #ffffff 0%, #92efff 34%, #8c7bff 66%, #ffffff 100%) !important;
+  -webkit-background-clip: text !important;
+  color: transparent !important;
+  background-size: 220% 100% !important;
+  animation: titleGlow 7s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0%, 100% { background-position: 0% 50%; filter: drop-shadow(0 0 18px rgba(37,233,255,.05)); }
+  50% { background-position: 100% 50%; filter: drop-shadow(0 0 28px rgba(140,86,255,.16)); }
+}
+
+.hero-sub { max-width: 680px; }
+.hero-stats { margin-top: 30px; }
+.stat-card {
+  background: linear-gradient(180deg, rgba(10, 25, 52, 0.72), rgba(2, 8, 20, 0.78)) !important;
+  border-color: rgba(115, 196, 255, 0.18) !important;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.stat-card:hover { transform: translateY(-3px); border-color: rgba(37,233,255,.38) !important; box-shadow: 0 18px 54px rgba(0,0,0,.32); }
+
+.hero-signal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 18px;
+  max-width: 700px;
+}
+.hero-signal span {
+  color: #bcd0eb;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 850;
+  letter-spacing: .04em;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(115,196,255,.16);
+  background: rgba(5,14,31,.56);
+  box-shadow: inset 0 0 20px rgba(37,233,255,.035);
+}
+
+.phone-stage::before {
+  background: radial-gradient(circle, rgba(37, 233, 255, 0.16), transparent 66%) !important;
+  animation: haloBreath 5.4s ease-in-out infinite;
+}
+@keyframes haloBreath { 0%,100% { transform: scale(.96); opacity: .7; } 50% { transform: scale(1.08); opacity: 1; } }
+
+.phone-frame, .device-card, .offline-device, .shot-image {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.phone-frame::before, .device-card::before, .offline-device::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  border-radius: inherit;
+  background: conic-gradient(from 0deg, rgba(37,233,255,.75), rgba(140,86,255,.55), rgba(22,241,154,.45), rgba(37,233,255,.75));
+  filter: blur(11px);
+  opacity: .36;
+  animation: borderSpin 9s linear infinite;
+}
+@keyframes borderSpin { to { transform: rotate(360deg); } }
+
+.phone-frame {
+  background: linear-gradient(145deg, rgba(72, 163, 255, .56), rgba(140,86,255,.38) 48%, rgba(22,241,154,.28)) !important;
+  box-shadow: 0 0 50px rgba(35,121,255,.30), 0 42px 110px rgba(0,0,0,.68) !important;
+  animation: phoneFloatDark 6.2s ease-in-out infinite !important;
+}
+@keyframes phoneFloatDark {
+  0%,100% { transform: rotateY(-7deg) rotateX(2deg) translateY(0); }
+  50% { transform: rotateY(-3deg) rotateX(1deg) translateY(-12px); }
+}
+
+.phone-inner::after, .device-card::after, .offline-device::after, .shot-image::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  z-index: 5;
+  border-radius: 28px;
+  pointer-events: none;
+  background: linear-gradient(118deg, transparent 18%, rgba(255,255,255,.13) 48%, transparent 70%);
+  transform: translateX(-135%);
+  animation: screenSweep 6.8s ease-in-out infinite;
+  mix-blend-mode: screen;
+}
+.device-card::after { animation-delay: 1.4s; }
+.offline-device::after { animation-delay: 2.1s; }
+@keyframes screenSweep {
+  0%, 45% { transform: translateX(-140%); opacity: 0; }
+  55% { opacity: .55; }
+  78% { transform: translateX(140%); opacity: 0; }
+  100% { transform: translateX(140%); opacity: 0; }
+}
+
+.section-head { margin-bottom: 28px; }
+.section-kicker { color: #72eaff !important; }
+.section-title { max-width: 760px; }
+.section-text { max-width: 760px; }
+
+.problem-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+.workflow-card { min-height: 132px; padding: 20px; }
+.workflow-card span { margin-bottom: 18px; }
+.workflow-arrow { margin-top: 24px; color: #9db8ff; }
+
+.model-highlight { padding: clamp(24px, 4vw, 36px) !important; }
+.model-highlight-copy p { max-width: 760px; }
+.model-points { gap: 14px; }
+.model-point { padding: 18px !important; }
+.model-point span { font-size: 14px !important; line-height: 1.55 !important; }
+
+.steps {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 22px 84px;
+  display: grid;
+  gap: 24px;
+}
+.step-card {
+  transform-style: preserve-3d;
+  transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+}
+.step-card:hover { transform: translateY(-4px); border-color: rgba(37,233,255,.34) !important; }
+.step-copy p { max-width: 560px; }
+.device-card {
+  background: linear-gradient(145deg, rgba(98,196,255,.38), rgba(140,86,255,.24), rgba(22,241,154,.18)) !important;
+}
+.device-card img, .offline-device img, .phone-inner img {
+  transform: translateZ(0);
+}
+
+.offline-section { padding-top: 30px; }
+.offline-card { border-radius: 32px; }
+.offline-points { gap: 10px; }
+.offline-points div { background: rgba(3, 10, 24, 0.62) !important; }
+
+.feature-grid { gap: 14px; }
+.feature-card { min-height: 172px; padding: 22px !important; }
+.feature-icon { margin-bottom: 16px !important; }
+.feature-card p { font-size: 14px !important; line-height: 1.5 !important; }
+
+.roles { gap: 12px; }
+.role-card { min-height: 106px; background: rgba(5, 14, 31, 0.64) !important; }
+.trial { border-radius: 34px; }
+.btn-primary {
+  background: linear-gradient(135deg, #56b8ff 0%, #176fff 50%, #7b55ff 100%) !important;
+  box-shadow: 0 0 34px rgba(35, 121, 255, 0.38), 0 20px 58px rgba(4, 92, 255, 0.22) !important;
+}
+.btn-primary:hover { box-shadow: 0 0 46px rgba(37,233,255,.34), 0 22px 64px rgba(4,92,255,.26) !important; }
+
+footer { position: relative; z-index: 2; }
+.footer-inner { gap: 28px; }
+
+@media (max-width: 1020px) {
+  .hero { grid-template-columns: 1fr; gap: 36px; }
+  .hero-copy { max-width: 760px; margin: 0 auto; }
+  .phone-frame { transform: none; animation: phoneFloatMobile 5.8s ease-in-out infinite !important; }
+  @keyframes phoneFloatMobile { 0%,100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-9px) scale(1.015); } }
+  .problem-grid { grid-template-columns: repeat(5, minmax(150px, 1fr)); }
+}
+
+@media (max-width: 760px) {
+  body::after { animation-duration: 13s; opacity: .72; }
+  .ambient { width: 280px; height: 280px; filter: blur(46px); opacity: .24; }
+  .ambient.one { top: 4%; left: -150px; }
+  .ambient.two { top: 44%; right: -160px; }
+  .ambient.three { display: none; }
+
+  .nav { position: sticky; }
+  .nav-inner { padding: 10px 14px !important; }
+  .brand strong { font-size: 23px !important; }
+  .brand span { font-size: 8px !important; letter-spacing: .24em !important; }
+  .nav-cta {
+    min-height: 38px !important;
+    padding: 9px 12px !important;
+    font-size: 12px !important;
+    border-radius: 999px !important;
+  }
+
+  .section { padding: 58px 16px !important; }
+  .hero {
+    display: flex !important;
+    flex-direction: column;
+    padding-top: 46px !important;
+    padding-bottom: 48px !important;
+    gap: 28px !important;
+  }
+  .hero-copy { width: 100%; margin: 0; }
+  .eyebrow {
+    font-size: 11px !important;
+    letter-spacing: .06em !important;
+    padding: 8px 11px !important;
+  }
+  h1 {
+    font-size: clamp(40px, 12.2vw, 52px) !important;
+    line-height: 1.01 !important;
+    letter-spacing: -.058em !important;
+    margin-top: 20px !important;
+  }
+  .hero-sub {
+    margin-top: 18px !important;
+    font-size: 16.5px !important;
+    line-height: 1.52 !important;
+    color: #b5c4dd !important;
+  }
+  .hero-stats {
+    grid-template-columns: 1fr !important;
+    gap: 9px !important;
+    margin-top: 22px !important;
+  }
+  .stat-card {
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 14px !important;
+    border-radius: 18px !important;
+  }
+  .stat-card strong { font-size: 18px !important; }
+  .stat-card span { margin: 0 !important; font-size: 13px !important; line-height: 1.34 !important; }
+  .hero-signal {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    margin-left: -16px;
+    padding-left: 16px;
+    width: calc(100% + 32px);
+    scrollbar-width: none;
+  }
+  .hero-signal::-webkit-scrollbar { display: none; }
+  .hero-signal span { flex: 0 0 auto; font-size: 11px; padding: 9px 11px; }
+
+  .phone-stage {
+    width: 100%;
+    min-height: 0 !important;
+    padding-top: 2px;
+  }
+  .phone-stage::before { top: 7%; height: 310px; }
+  .phone-frame {
+    width: min(330px, 92vw) !important;
+    border-radius: 42px !important;
+    padding: 8px !important;
+  }
+  .phone-inner { border-radius: 34px !important; }
+
+  .section-head { gap: 10px; margin-bottom: 22px !important; }
+  .section-kicker { font-size: 11px !important; letter-spacing: .18em !important; }
+  .section-title {
+    font-size: clamp(30px, 9vw, 40px) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -.048em !important;
+  }
+  .section-text {
+    font-size: 16px !important;
+    line-height: 1.58 !important;
+  }
+
+  .problem-grid,
+  .model-points,
+  .feature-grid,
+  .roles,
+  .offline-points {
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px !important;
+    margin-left: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: calc(100% + 32px);
+    scrollbar-width: none;
+  }
+  .problem-grid::-webkit-scrollbar,
+  .model-points::-webkit-scrollbar,
+  .feature-grid::-webkit-scrollbar,
+  .roles::-webkit-scrollbar,
+  .offline-points::-webkit-scrollbar { display: none; }
+
+  .workflow-card,
+  .model-point,
+  .feature-card,
+  .role-card,
+  .offline-points div {
+    min-width: min(82vw, 330px) !important;
+    scroll-snap-align: center;
+  }
+  .workflow-card { min-height: 126px !important; padding: 18px !important; }
+  .workflow-card span {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 12px !important;
+    margin-bottom: 16px !important;
+  }
+  .workflow-card h3 { font-size: 15px !important; line-height: 1.24; }
+  .workflow-arrow { font-size: 12px !important; line-height: 1.4; }
+
+  .model-highlight { padding: 20px !important; border-radius: 24px !important; }
+  .model-highlight-copy h3 { font-size: 27px !important; line-height: 1.1 !important; }
+  .model-highlight-copy p { font-size: 15.5px !important; line-height: 1.58 !important; }
+  .model-point { min-height: 170px; }
+
+  .steps {
+    padding: 0 16px 58px !important;
+    gap: 18px !important;
+  }
+  .step-card,
+  .step-card:nth-child(even) {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    padding: 18px !important;
+    border-radius: 24px !important;
+  }
+  .step-card:nth-child(even) .step-copy,
+  .step-card:nth-child(even) .device-wrap { order: initial !important; }
+  .step-number {
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 13px !important;
+    margin-bottom: 12px !important;
+    font-size: 14px !important;
+  }
+  .step-copy h3 {
+    font-size: 25px !important;
+    line-height: 1.12 !important;
+    letter-spacing: -.038em !important;
+  }
+  .step-copy p {
+    font-size: 15px !important;
+    line-height: 1.54 !important;
+    margin-top: 10px !important;
+  }
+  .device-wrap,
+  .device-wrap.wide {
+    width: 100% !important;
+    max-width: 390px;
+    justify-self: center;
+  }
+  .device-card {
+    border-radius: 28px !important;
+    padding: 7px !important;
+  }
+  .device-card img {
+    border-radius: 22px !important;
+    width: 100%;
+  }
+
+  .offline-section { padding-top: 6px !important; }
+  .offline-card {
+    padding: 20px !important;
+    border-radius: 24px !important;
+    gap: 20px !important;
+  }
+  .offline-points { margin-top: 18px !important; }
+  .offline-points div { padding: 15px !important; border-radius: 18px !important; }
+  .offline-device { width: min(315px, 100%) !important; }
+
+  .feature-card { min-height: 176px !important; }
+  .feature-icon { width: 40px !important; height: 40px !important; border-radius: 14px !important; font-size: 18px !important; }
+  .role-card { min-height: 120px; }
+
+  .trial {
+    padding: 22px !important;
+    border-radius: 24px !important;
+    gap: 18px !important;
+  }
+  .trial h2 { font-size: clamp(30px, 9vw, 40px) !important; line-height: 1.05 !important; }
+  .trial p { font-size: 15.5px !important; line-height: 1.58 !important; }
+  .trial small { font-size: 12px !important; }
+  .btn { min-height: 52px !important; border-radius: 16px !important; }
+
+  footer { padding: 44px 16px 54px !important; }
+  .footer-inner { gap: 24px !important; }
+  .footer-title { font-size: 32px !important; }
+  .footer-copy, .footer-col p, .footer-col a { font-size: 13px !important; }
+  .footer-bottom { margin-top: 24px !important; }
+}
+
+@media (max-width: 420px) {
+  .section { padding-left: 14px !important; padding-right: 14px !important; }
+  .hero { padding-top: 38px !important; }
+  h1 { font-size: clamp(38px, 12vw, 48px) !important; }
+  .stat-card { grid-template-columns: 84px 1fr; }
+  .phone-frame { width: min(318px, 92vw) !important; }
+  .steps { padding-left: 14px !important; padding-right: 14px !important; }
+}
 </style>
-</head>
+<meta content="#01040c" name="theme-color"/></head>
 <body>
 <div class="ambient one"></div>
 <div class="ambient two"></div>
@@ -751,7 +1210,7 @@
 <div class="stat-card"><strong>Capture</strong><span>Speak or type findings during the inspection.</span></div>
 <div class="stat-card"><strong>Structure</strong><span>Turn rough notes into professional report language.</span></div>
 <div class="stat-card"><strong>Export</strong><span>Organize inspection records for review and sharing.</span></div>
-</div>
+</div><div class="hero-signal"><span>Voice</span><span>Photos</span><span>Findings</span><span>Corrective actions</span><span>Excel export</span></div>
 </div>
 <div class="phone-stage reveal">
 <div class="phone-frame">
@@ -764,8 +1223,8 @@
 <section class="section" id="problem">
 <div class="section-head reveal">
 <div class="section-kicker">The reporting bottleneck</div>
-<h2 class="section-title">Manual Inspection Reporting Slows Everything Down</h2>
-<p class="section-text">The inspection may end on site, but the reporting work usually continues afterward. Teams still clean up notes, check references, rewrite findings, draft corrective actions, organize photos, and assemble the final report manually.</p>
+<h2 class="section-title">Reporting Is the Bottleneck</h2>
+<p class="section-text">The inspection may finish on site, but the report usually continues afterward. Pulse cuts that cleanup work into a faster reviewable flow.</p>
 </div>
 <div class="problem-grid reveal">
 <div class="workflow-card glass"><span>01</span><h3>Observation captured</h3></div>
@@ -774,33 +1233,32 @@
 <div class="workflow-card glass"><span>04</span><h3>Corrective action drafted</h3></div>
 <div class="workflow-card glass"><span>05</span><h3>Final report assembled</h3></div>
 </div>
-<div class="workflow-arrow reveal">Pulse compresses that work into one inspection flow.</div>
+<div class="workflow-arrow reveal">Pulse brings the reporting work into the inspection flow.</div>
 </section>
 <section class="section" id="how">
 <div class="section-head reveal">
 <div class="section-kicker">Product story</div>
-<h2 class="section-title">From field observation to structured report.</h2>
-<p class="section-text">The strongest way to understand Pulse is through the workflow. Start the inspection, capture the observation, let Pulse structure the finding, review the result, then export the report.</p>
+<h2 class="section-title">Capture. Review. Export.</h2>
+<p class="section-text">A simpler inspection workflow: capture the finding, review the structured result, and export the report.</p>
 </div>
-<div class="model-highlight glass reveal" aria-label="Specialized AI engine details">
+<div aria-label="Specialized AI engine details" class="model-highlight glass reveal">
 <div class="model-highlight-copy">
 <div class="section-kicker">Specialized AI engine</div>
-<h3>Built around the language, structure, and workflow of real inspections.</h3>
-<p>Pulse is powered by a specialized AI engine designed for inspection reporting, not general note taking. It understands field observations, public health terminology, deficiency wording, corrective action logic, and the way inspection findings need to be reviewed, documented, and shared.</p>
+<h3>Purpose built for inspection reporting.</h3>
+<p>Pulse uses a specialized AI engine shaped around the way inspectors actually speak, write, and review findings during public health inspections. It understands rough observations, deficiency language, corrective action flow, photo evidence, and the structure needed for a clean inspection report.</p>
 <div class="model-points">
-<div class="model-point"><strong>Understands inspection context</strong><span>Pulse works with the language inspectors actually use on board, including findings, deficiencies, requirements, photos, corrective actions, and follow up notes.</span></div>
-<div class="model-point"><strong>Structures reports faster</strong><span>Rough voice or typed observations are converted into cleaner professional wording, making the final report faster to review, refine, and export.</span></div>
-<div class="model-point"><strong>Keeps the inspector in control</strong><span>Pulse supports speed, consistency, and structure, while the inspector remains responsible for final review, professional judgment, and approval.</span></div>
+<div class="model-point"><strong>Reads inspection language</strong><span>Understands how inspectors describe locations, conditions, photos, requirements, and follow up details during real onboard inspections.</span></div>
+<div class="model-point"><strong>Creates the finding</strong><span>Turns rough notes into clear deficiencies and practical corrective actions, written in the format inspection teams actually need.</span></div>
+<div class="model-point"><strong>Finishes the report work</strong><span>By the time the inspection ends, Pulse has already prepared the structured report content that would normally take hours to write manually.</span></div>
 </div>
 </div>
 </div>
-</div>
-<div class="steps">
+</section><div class="steps">
 <article class="step-card glass reveal">
 <div class="step-copy">
 <div class="step-number">1</div>
 <h3>Speak or type the observation</h3>
-<p>The inspector records what was observed during the inspection using voice input or typed notes. Pulse keeps the workflow focused on what happened in the field.</p>
+<p>Speak or type what you found. Pulse keeps the capture step clean and fast.</p>
 </div>
 <div class="device-wrap">
 <div class="device-card">
@@ -812,7 +1270,7 @@
 <div class="step-copy">
 <div class="step-number">2</div>
 <h3>Pulse structures the finding</h3>
-<p>Pulse interprets the observation and prepares professional inspection wording, including deficiency language, suggested corrective action, recommendation text, and reviewable structure.</p>
+<p>Pulse prepares cleaner wording, suggested corrective action, recommendation text, and a structure ready for review.</p>
 </div>
 <div class="device-wrap wide">
 <div class="device-card">
@@ -824,7 +1282,7 @@
 <div class="step-copy">
 <div class="step-number">3</div>
 <h3>Generate the report</h3>
-<p>Findings, corrective actions, recommendations, photos, feedback, and key details are organized into a professional inspection report that can be reviewed and shared.</p>
+<p>Findings, corrective actions, photos, feedback, and key details are organized for review and sharing.</p>
 </div>
 <div class="device-wrap">
 <div class="device-card">
@@ -832,18 +1290,16 @@
 </div>
 </div>
 </article>
-</div>
-</section>
-<section class="section offline-section" id="offline">
+</div><section class="section offline-section" id="offline">
 <div class="offline-card glass reveal">
 <div class="offline-copy">
 <div class="section-kicker">Offline mode</div>
-<h2 class="section-title">Keep inspecting when the signal drops.</h2>
-<p class="section-text">Pulse gives inspectors a separate offline path for areas where connection is limited. Observations can be stored on the device during the inspection, then synced later for full AI processing and report generation.</p>
+<h2 class="section-title">Works even when signal drops.</h2>
+<p class="section-text">A separate offline path lets inspectors keep capturing findings when connection is limited, then sync later for full processing.</p>
 <div aria-label="Offline mode benefits" class="offline-points">
 <div><strong>Local capture</strong><span>Save inspection details on the device while offline.</span></div>
-<div><strong>Clean separation</strong><span>Offline workflow is clearly marked, so users know when AI processing waits for sync.</span></div>
-<div><strong>Sync later</strong><span>When connection returns, inspections can be processed into structured reports.</span></div>
+<div><strong>Clean separation</strong><span>The offline path is clearly marked, so users know when processing waits for sync.</span></div>
+<div><strong>Sync later</strong><span>When connection returns, stored inspections can be processed into structured reports.</span></div>
 </div>
 </div>
 <div aria-label="Pulse offline mode screenshot" class="offline-visual">
@@ -852,32 +1308,28 @@
 </div>
 </div>
 </div>
-</section>
-
-<section class="section" id="features">
+</section><section class="section" id="features">
 <div class="section-head reveal">
 <div class="section-kicker">Core features</div>
-<h2 class="section-title">Built for public health teams at sea.</h2>
-<p class="section-text">A focused inspection assistant for teams that need speed, structure, and cleaner documentation without turning the workflow into a generic chatbot experience.</p>
+<h2 class="section-title">Focused tools, no clutter.</h2>
+<p class="section-text">Everything is built around faster inspection reporting, cleaner documentation, and fewer manual cleanup steps.</p>
 </div>
 <div class="feature-grid reveal">
-<div class="feature-card glass"><div class="feature-icon">🎙️</div><h3>Voice observations</h3><p>Inspectors can capture findings quickly by speaking naturally during inspections.</p></div>
-<div class="feature-card glass"><div class="feature-icon">⌨️</div><h3>Typed observations</h3><p>Pulse also supports typed inspection notes when voice input is not practical.</p></div>
-<div class="feature-card glass"><div class="feature-icon">✨</div><h3>AI assisted wording</h3><p>Pulse helps turn rough inspection notes into structured findings, recommendations, and report wording.</p></div>
-<div class="feature-card glass"><div class="feature-icon">🔎</div><h3>Requirement support</h3><p>Pulse helps connect observations to the relevant public health requirement or internal procedure.</p></div>
-<div class="feature-card glass"><div class="feature-icon">✅</div><h3>Corrective actions</h3><p>Each finding can include practical corrective action language for faster follow up.</p></div>
-<div class="feature-card glass"><div class="feature-icon">📷</div><h3>Photo support</h3><p>Inspection photos can be attached to findings and included in the report workflow.</p></div>
-<div class="feature-card glass"><div class="feature-icon">🛰️</div><h3>Offline mode</h3><p>Inspections can be stored locally when internet access is limited, then synced for full AI report generation later.</p></div>
-<div class="feature-card glass"><div class="feature-icon">🗂️</div><h3>Previous inspections</h3><p>Inspectors can review past inspections and add feedback when needed.</p></div>
-<div class="feature-card glass"><div class="feature-icon">📊</div><h3>Excel export</h3><p>Reports can be exported in a structured format for review, sharing, and record keeping.</p></div>
+<div class="feature-card glass"><div class="feature-icon">🎙️</div><h3>Voice observations</h3><p>Capture findings quickly by speaking naturally during inspection work.</p></div>
+<div class="feature-card glass"><div class="feature-icon">⌨️</div><h3>Typed observations</h3><p>Type notes when voice input is not practical.</p></div>
+<div class="feature-card glass"><div class="feature-icon">✨</div><h3>AI assisted wording</h3><p>Turn rough notes into structured findings and report wording.</p></div>
+<div class="feature-card glass"><div class="feature-icon">🔎</div><h3>Requirement support</h3><p>Support the link between findings and the relevant requirement or procedure.</p></div>
+<div class="feature-card glass"><div class="feature-icon">✅</div><h3>Corrective actions</h3><p>Add practical corrective action language for faster follow up.</p></div>
+<div class="feature-card glass"><div class="feature-icon">📷</div><h3>Photo support</h3><p>Attach inspection photos directly to findings.</p></div>
+<div class="feature-card glass"><div class="feature-icon">🛰️</div><h3>Offline mode</h3><p>Store inspections locally when access is limited, then sync later.</p></div>
+<div class="feature-card glass"><div class="feature-icon">🗂️</div><h3>Previous inspections</h3><p>Review previous inspections and add feedback when needed.</p></div>
+<div class="feature-card glass"><div class="feature-icon">📊</div><h3>Excel export</h3><p>Export structured reports for review, sharing, and records.</p></div>
 </div>
-</section>
-
-<section class="section" id="why">
+</section><section class="section" id="why">
 <div class="section-head reveal">
 <div class="section-kicker">Why it matters</div>
-<h2 class="section-title">More Time Inspecting. Less Time Writing.</h2>
-<p class="section-text">Pulse is built for teams that need faster inspection workflows without sacrificing consistency. It reduces repetitive manual writing, improves documentation structure, and gives public health teams a cleaner way to manage findings from the field to the final report.</p>
+<h2 class="section-title">Less Writing. Cleaner Reports.</h2>
+<p class="section-text">Pulse reduces repetitive writing, improves structure, and gives teams a cleaner path from field observation to final report.</p>
 </div>
 <div class="roles reveal">
 <div class="role-card">Public Health Directors<span>Better visibility into inspection reporting workflow.</span></div>
@@ -885,19 +1337,16 @@
 <div class="role-card">Hotel and Marine Ops<span>Clearer follow up from findings to corrective action.</span></div>
 <div class="role-card">Compliance Managers<span>More organized records for review and documentation.</span></div>
 </div>
-</section>
-<section class="section" id="trial">
+</section><section class="section" id="trial">
 <div class="trial glass reveal">
 <div>
-<h2>Try Pulse on one real inspection.</h2>
-<p>Give your team a practical test. Capture a real observation, review the structured finding, and see how much report writing time can be removed from the workflow.</p>
+<h2>Test Pulse on one real inspection.</h2>
+<p>Capture a real observation, review the structured finding, and see how much manual report writing your team can remove.</p>
 <small>Free trial access is provided for evaluation and may be limited according to Pulse trial terms.</small>
 </div>
-<a class="btn btn-primary" href="mailto:office@zennph.com?subject=Pulse%20Free%20Trial%20Request">Request a Free Trial</a>
+<a class="btn btn-primary" href="mailto:office@zennph.com?subject=Pulse%20Free%20Trial%20Request">Request Free Trial</a>
 </div>
-</section>
-</main>
-<footer>
+</section></main><footer>
 <div class="footer-inner">
 <div>
 <div class="footer-title">Pulse</div>
@@ -927,8 +1376,16 @@
 </div>
 <div class="footer-legal-note">Effective date: 30 March 2026. Pulse by ZennPH is operated by ZennPH LTD.</div>
 </div>
-</footer>
-</div>
+</footer></div>
+
+
+
+
+
+
+
+
+
 <div aria-hidden="true" aria-labelledby="terms-modal-title" class="legal-modal" id="terms-modal" role="dialog">
 <div class="legal-modal-panel">
 <div class="legal-modal-head">
@@ -953,7 +1410,7 @@
 </div>
 </div>
 </div>
-</div>
+
 <script>
     const revealEls = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver((entries) => {
@@ -1009,6 +1466,16 @@
         document.querySelectorAll('.legal-modal.open').forEach((modal) => closeModal(modal));
       }
     });
-  </script>
+  
+
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+
+    const livelyCards = document.querySelectorAll('.step-card, .feature-card, .workflow-card, .model-point, .stat-card');
+    livelyCards.forEach((card, index) => {
+      card.style.transitionDelay = `${Math.min(index * 22, 180)}ms`;
+    });
+</script>
 </body>
 </html>
