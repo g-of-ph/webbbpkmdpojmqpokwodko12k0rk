@@ -1178,6 +1178,50 @@ footer { position: relative; z-index: 2; }
   .phone-frame { width: min(318px, 92vw) !important; }
   .steps { padding-left: 14px !important; padding-right: 14px !important; }
 }
+
+
+/* Mobile card stacking fix: removes horizontal card swiping without changing the desktop design */
+@media (max-width: 760px) {
+  .hero-signal {
+    flex-wrap: wrap !important;
+    overflow-x: visible !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 0 !important;
+    width: 100% !important;
+  }
+
+  .hero-signal span {
+    flex: 0 1 auto !important;
+  }
+
+  .problem-grid,
+  .model-points,
+  .feature-grid,
+  .roles,
+  .offline-points {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    overflow-x: visible !important;
+    scroll-snap-type: none !important;
+    gap: 12px !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+  }
+
+  .workflow-card,
+  .model-point,
+  .feature-card,
+  .role-card,
+  .offline-points div {
+    min-width: 0 !important;
+    width: 100% !important;
+    scroll-snap-align: none !important;
+  }
+}
 </style>
 <meta content="#01040c" name="theme-color"/></head>
 <body>
